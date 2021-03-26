@@ -240,6 +240,11 @@ function shapeAllInstances(shape) {
   return planets
 }
 
+/***************
+ * Shape Definitions
+ ***************/
+
+
 // Using `Set` is just a hack for logical OR
 // See above: `!Array.isArray(x)` is for these Sets
 
@@ -516,6 +521,8 @@ function rarePlanetLists() {
       writeListFile('rares_stars', shape, star_planets)
     }
   }
+
+  console.log('Content written to rares/ and rares_stars/')
 }
 
 function printAllStars() {
@@ -532,6 +539,7 @@ function printSigilCounts() {
 }
 
 function printGlyphCounts() {
+  console.log("Total Counts")
   console.log("Marble count: " + marbles.length)
   console.log("Square count: " + squares.length)
   console.log("B Pill count: " + pills.back.length)
@@ -545,6 +553,7 @@ function printGlyphCounts() {
   console.log("Pie SW count: " + wedges.SW.length)
   console.log("Pie SE count: " + wedges.SE.length)
   console.log(" ")
+  console.log("Prefix/Suffix Counts")
   console.log("Marble count: " + pres(marbles).length + " " + sufs(marbles).length)
   console.log("Square count: " + pres(squares).length + " " + sufs(squares).length)
   console.log("B Pill count: " + pres(pills.back).length + " " + sufs(pills.back).length)
@@ -604,15 +613,14 @@ function sigilMenu() {
     {
       type: 'list',
       name: 'action',
-      message: 'Sigil Information',
+      message: 'General Information',
       default: 'rares',
       choices: [
         {value: 'glyph', name: 'Sigil Glyph Counts'},
-        {value: 'fakes', name: 'Planets which do not exist'},
+        // {value: 'fakes', name: 'Planets which do not exist'},
         {value: 'rares', name: 'Rare Sigil Counts'},
         {value: 'all4r', name: 'Rare Planet Lists'},
-        {value: 'angel', name: 'Angel Planet List'},
-        {value: 'stars', name: 'All Star Names'},
+        // {value: 'stars', name: 'All Star Names'},
       ]
     }
   ]).then(answers => {
@@ -636,7 +644,7 @@ function starSelect() {
       message: 'Which star(s)?',
       default: 'rondev',
       choices: [
-        {value: 'rondev', name: '~rondev'},
+        {value: 'rondev', name: '~rondev (urbit.me)'},
         {value: 'enter', name: 'Enter star name'},
       ]
     }
@@ -681,8 +689,8 @@ function starMenu(stars, batch) {
         {value: 'shapes', name: 'Planets with interesting sigils'},
         {value: 'names', name: 'Planets with interesting names'},
         {value: 'shapes_three', name: 'Planets with less rare sigils (3 of 4)'},
-        {value: 'words', name: 'Planets with English words in their names'},
-        {value: 'lexical', name: 'Planets only containing English words'}
+        {value: 'words', name: 'Planets with English words in their names (slow)'},
+        {value: 'lexical', name: 'Planets only containing English words (slow)'}
       ]
     }
   ]).then(answers => {
