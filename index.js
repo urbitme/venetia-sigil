@@ -348,12 +348,15 @@ const cool_words = ["walnut","master","docter","doctyr","topfun","winter","forme
                     "dishes","walrus","botnet","ladder","parsec","donnut","windex","wanted",
                     "balled","ballet","ramped","banter","banned","bonnet","barber","barrel",
                     "barbes","barfed","barter","bathes","tonnes","molten","parsed","batter",
-                    "dissed","minter","salted","litter","bidder","binder","pasted","mitten",
+                    "dissed","minter","litter","bidder","binder","pasted","mitten",
                     "martyr","bitten","bitter","bolder","tanned","bolted","banner","fasten",
                     "bossen","bosser","wallet","normes","dander","dactyl","sorted","signer",
                     "tornep","sampel","mastyr","hodlur","hodlyr","winner","filtyr","filter",
                     "hatred","parser","matryx","winsum","battel","pollux","ballen","timber",
-                    "biches","misted","lattes","waltyr","larper","morsul"]
+                    "biches","misted","lattes","waltyr","larper","morsul","wisper","borred",
+                    "nappes","roldem","hosten","natrul","sovren","sovrun","sovryn","pander",
+                    "dandys","dabber","datbud","disbud","pilled","maghec","worsep","laddes",
+                    "macnut","toltec","fabled","bottem","botted", "lopper"]
 
 function objectMap(object, mapFn) {
   return Object.keys(object).reduce(function(result, key) {
