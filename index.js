@@ -475,6 +475,16 @@ function forEachStar(stars, processFunc) {
   }
 }
 
+function batchProcessStars(label, stars, processFunc) {
+  console.log('\x1b[36m\x1b[1m%s\x1b[0m', label);
+  let planets = [];
+  for (let st of stars) {
+    star = st.length == 7 ? st : '~' + st;
+    planets = planets.concat(allPlanets(star));
+  }
+  processFunc(planets, label);
+}
+
 function allPlanetsList(planets, star_alpha) {
   searchAndSaveFile(planets, star_alpha, 'all', (planet) => true)
 }
